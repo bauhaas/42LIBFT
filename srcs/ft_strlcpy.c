@@ -6,12 +6,11 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 22:52:13 by bahaas            #+#    #+#             */
-/*   Updated: 2020/10/13 21:21:36 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/14 15:38:09 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-#include <bsd/string.h>
 
 size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 {

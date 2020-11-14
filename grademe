@@ -1,6 +1,6 @@
 #!/bin/bash
 source ./test_srcs/colors.sh
-#source ./test_srcs/functions.sh
+#source ./test_srcs/func_list.sh
 source ./test_srcs/options.sh
 DIRECTORY=$(cd `dirname $0` && pwd)
 PWD=${pwd}
@@ -38,18 +38,30 @@ printf " | |   / _ \ __|// __|  / __| '_ \ / _ \/ __| |/ / | | | '_ \| |_| __| /
 printf " | |__|  __/ |_  \__ \ | (__| | | |  __/ (__|   <  | | | |_) |  _| |_ | (_| |\n"
 printf " |_____\___|\__| |___/  \___|_| |_|\___|\___|_|\_\ |_|_|_.__/|_|  \__(_)__,_|\n\n"
 printf " ============================================================================\n"
-printf "\n"
-printf ${BOLD}${BLUE}" ============================================================================\n"
+printf ${WHITE}"\n"
+#norminette_path()
+#{
+#read -p "Do you run the test from Guacamole/42 Campus [Y/N]?" AT_42
+#if [[ "${AT42}" == "Y" ]];then
+#	NORMINETTE_PATH=/usr/share/norminette/norminette.rb
+#elif [[ "${AT42}" == "N" ]]; then
+#	NORMINETTE_PATH=~/.norminette/norminette.rb
+#else
+#	norminette_path
+#fi
+#}
+
+#Check for code owner / Makefile presence / and libft.h presence
+
+printf ${BOLD}${BLUE}"\n ============================================================================\n"
 printf " *				PROJECT CHECK				    *\n"
-printf " ============================================================================\n"
-printf "\n"${DEFAULT}
-printf ${WHITE}"\033[4GCode owner"
-printf "\033[30GMakefile"
-printf "\033[56GHeader\n"
-if [[ "$(for i in *.c; do sed -n '6p' $i | tail -1 | cut -f5 -d ' '; done | uniq | wc -l)" == "1" ]]; then
+printf " ============================================================================\n\n"
+printf ${WHITE}"\033[4GCode owner\033[30GMakefile\033[56GHeader\n"
+#Check the username in every C files, if username not unique, check manually with the command below (paste only from for to done. Some students are even able to copy/paste header :v
+if [[ "$(for i in srcs/*.c; do sed -n '6p' $i | tail -1 | cut -f5 -d ' '; done | uniq | wc -l | sed -e 's/^[ \t]*//')" == "1" ]]; then
 	printf ${GREEN}"\033[4G${OWNER}"
 else
-	printf ${RED}"\033[4GMultiple names ! "
+	printf ${RED}"\033[4GMultiple names ! ✖"
 fi
 if [ -n "$(find ./ -type f -name "Makefile" -exec basename {} \;)" ];then
 	printf ${GREEN}"\033[30G[OK]"
@@ -61,17 +73,13 @@ if [ -n "$(find ./ -type f -name "libft.h" -exec basename {} \;)" ];then
 else
 	printf ${RED}"\033[56G[KO]\n"
 fi
-printf "\n"
-printf ${BOLD}${BLUE}" ============================================================================\n"
+
+#Check for mandatory rules in the Makefile
+
+printf ${BOLD}${BLUE}"\n ============================================================================\n"
 printf " *				MAKEFILE CHECK				    *\n"
-printf " ============================================================================\n"
-printf "\n"${DEFAULT}
-printf ${WHITE}"\033[4G\${NAME}"
-printf "\033[17Gall"
-printf "\033[30Gclean"
-printf "\033[43Gfclean"
-printf "\033[56Gre"
-printf "\033[69Glibft.a\n"
+printf " ============================================================================\n\n"
+printf ${WHITE}"\033[4G\${NAME}\033[17Gall\033[30Gclean\033[43Gfclean\033[56Gre\033[69Glibft.a\n"
 if [[ "${NAME_RULE}" == *"\${NAME}"* ]]; then 
 	printf ${GREEN}"\033[4G[OK]"
 else
@@ -102,17 +110,15 @@ if [[ "${LIB_NAME}" == *"libft.a"* ]]; then
 else
 	printf ${RED}"\033[69G[KO]\n"
 fi
-printf ${WHITE}"\n"
-printf ${BOLD}${BLUE}" ============================================================================\n"
+
+#Check for Compilation / Flags error (-Wextra -Werror -Wall) / Norm error / Tests results
+
+printf ${BOLD}${BLUE}"\n ============================================================================\n"
 printf ${BOLD}${BLUE}" *				C FILES CHECK				    *\n"
-printf ${BOLD}${BLUE}" ============================================================================\n"
-printf ${BOLD}${BLUE}"\n"
-printf ${WHITE}"\033[4GFunction"
-printf "\033[24GFlags"
-printf "\033[40GNorme"
-printf "\033[52GTests\n"
-printf ${WHITE}"\n"
-part1=(
+printf ${BOLD}${BLUE}" ============================================================================\n\n"
+printf ${WHITE}"\033[4GFunction\033[24GFlags/Compil\033[40GNorm\033[52GTests\n\n"
+
+PART_1=(
 	'ft_atoi.c'
 	'ft_bzero.c'
 	'ft_calloc.c'
@@ -128,6 +134,7 @@ part1=(
 	'ft_memmove.c'
 	'ft_memset.c'
 	'ft_strchr.c'
+	'ft_strrchr.c'
 	'ft_strdup.c'
 	'ft_strlcat.c'
 	'ft_strlcpy.c'
@@ -137,7 +144,7 @@ part1=(
 	'ft_tolower.c'
 	'ft_toupper.c'
 )
-part2=(
+PART_2=(
 	'ft_substr.c'
 	'ft_strjoin.c'
 	'ft_strtrim.c'
@@ -149,7 +156,7 @@ part2=(
 	'ft_putnbr_fd.c'
 	'ft_putstr_fd.c'
 )
-bonus=(
+BONUS_0=(
 	'ft_lstadd_back.c'
 	'ft_lstadd_front.c'
 	'ft_lstclear.c'
@@ -161,120 +168,55 @@ bonus=(
 	'ft_lstsize.c'
 )
 
-#Verify if functions respect norminette / compile and pass the tests
-#function_breaker()
-#{
-#}
-#
-#if [ ${TEST_P1} -eq 1 ]; then
-#	function_breaker "PART 1" ${part1[@]} ${CYAN}
-#fi
-#
-#if [ ${TEST_P2} -eq 1 ]; then
-#	function_breaker "PART 2" ${part2[@]} ${CYAN}
-#fi
-#
-#if [ ${TEST_BONUS} -eq 1 ]; then
-#	function_breaker "BONUS" ${bonus[@]} ${YELLOW}
-#fi
-
-#PART1
+#Verify if functions respect the norm, compile and pass the tests
+function_breaker()
+{
+	local part="$1"
+	local color="$2"
+	shift
+	shift 								#save 2 first argument in local variable then shift them to the left ($1 and $2 gets lost)
+	local arr=("$@") 					#allowing me to use the array with the last argument
+	printf ${color}"\033[31G${part}\n"
+	for val in "${arr[@]}"; do
+		printf ${color}"\033[4G${val}"
+		if [[ -z $(gcc -Wextra -Werror -Wall ./srcs/${val} ./tests_functions/${val} libft.a 2>&1 | head -1) ]]; then
+			printf ${GREEN}"\033[24G[OK]"
+		else
+			printf ${RED}"\033[24G[KO]"
+		fi
+		if [[ -z $(norminette ./srcs/${val} | grep "Error\|Warning") ]]; then
+			printf ${GREEN}"\033[40G[OK]"
+		else
+			printf ${RED}"\033[40G[KO]"
+		fi
+		i=52
+		test_num=1
+		if test -f ./a.out; then
+			./a.out > ./output/user/${val}
+			while [ $i -le  70 ]; do
+				if [[ -z $(diff ./output/expected/${val} ./output/user/${val} | grep ${test_num}c${test_num}) ]]; then
+					printf ${GREEN}"\033[${i}G✔"
+				else
+					printf ${RED}"\033[${i}G✖"
+				fi
+				test_num=$(($test_num+1))
+				i=$(($i+2))
+			done
+		else
+			printf ${RED}"\033[${i}GCompil error\n"
+			continue
+		fi
+		printf "\n"
+	done
+	printf "\n"
+}
 
 if [ ${TEST_P1} -eq 1 ]; then
-	printf ${CYAN}"\033[31GPART 1\n"
-	for val in ${part1[@]}; do
-		printf ${CYAN}"\033[4G${val}"
-		if [[ -z $(gcc -Wextra -Werror -Wall ./srcs/${val} ./tests_functions/main_${val} libft.a |& head -1) ]]; then
-			printf ${GREEN}"\033[24G[OK]"
-		else
-			printf ${RED}"\033[24G[KO]"
-		fi
-		if [[ -z $(~/.norminette/norminette.rb ./srcs/${val} | grep "Error\|Warning") ]]; then
-			printf ${GREEN}"\033[40G[OK]"
-		else
-			printf ${RED}"\033[40G[KO]"
-		fi
-		i=52
-		test_num=1
-		if test -f ./a.out; then
-			./a.out > ./output/user/user_output_${val}
-			while [ $i -le  70 ]; do
-				if [[ -z $(diff ./output/expected/expected_output_${val} ./output/user/user_output_${val} | grep ${test_num}c${test_num}) ]]; then
-					printf ${GREEN}"\033[${i}G"
-				else
-					printf ${RED}"\033[${i}G"
-				fi
-				test_num=$(($test_num+1))
-				i=$(($i+2))
-			done
-		else
-			printf ${RED}"\033[${i}GCompil error\n"
-			continue
-		fi
-		printf "\n"
-	done
-	printf "\n"
+	function_breaker "PART 1" ${CYAN} "${PART_1[@]}" 
 fi
-
-#PART2
 if [ ${TEST_P2} -eq 1 ]; then
-	printf ${CYAN}"\033[31GPART 2\n"
-	for val in ${part2[@]}; do
-		printf ${CYAN}"\033[4G${val}"
-		if [[ -z $(gcc -Wextra -Werror -Wall ./srcs/${val} ./tests_functions/main_${val} libft.a |& head -1) ]]; then
-			printf ${GREEN}"\033[24G[OK]"
-		else
-			printf ${RED}"\033[24G[KO]"
-		fi
-		if [[ -z $(~/.norminette/norminette.rb ./srcs/${val} | grep "Error\|Warning") ]]; then
-			printf ${GREEN}"\033[40G[OK]"
-		else
-			printf ${RED}"\033[40G[KO]"
-		fi
-		i=52
-		test_num=1
-		if test -f ./a.out; then
-			./a.out > ./output/user/user_output_${val}
-			while [ $i -le  70 ]; do
-				if [[ -z $(diff ./output/expected/expected_output_${val} ./output/user/user_output_${val} | grep ${test_num}c${test_num}) ]]; then
-					printf ${GREEN}"\033[${i}G"
-				else
-					printf ${RED}"\033[${i}G"
-				fi
-				test_num=$(($test_num+1))
-				i=$(($i+2))
-			done
-		else
-			printf ${RED}"\033[${i}GCompil error\n"
-			continue
-		fi
-		printf "\n"
-	done
-	printf "\n"
+	function_breaker "PART 2" ${CYAN} "${PART_2[@]}"
 fi
-
-#PARTBONUS
 if [ ${TEST_BONUS} -eq 1 ]; then
-	printf ${YELLOW}"\033[31GBONUS\n"
-	for val in ${bonus[@]}; do
-		printf ${YELLOW}"\033[4G${val}"
-		if [[ -z $(gcc -Wextra -Werror -Wall ./srcs/${val} ./tests_functions/main_${val} libft.a |& head -1) ]]; then
-			printf ${GREEN}"\033[24G[OK]"
-		else
-			printf ${RED}"\033[24G[KO]"
-		fi
-		if [[ -z $(~/.norminette/norminette.rb ./srcs/${val} | grep "Error\|Warning") ]]; then
-			printf ${GREEN}"\033[40G[OK]"
-		else
-			printf ${RED}"\033[40G[KO]"
-		fi
-		i=52
-		while [ $i -le  72 ]; do
-			printf ${GREEN}"\033[${i}G"
-			#printf ${RED}"\033[${i}G"
-			i=$(($i+2))
-		done
-		printf "\n"
-	done
-	printf "\n"
+	function_breaker "BONUS" ${YELLOW} "${BONUS_0[@]}"
 fi

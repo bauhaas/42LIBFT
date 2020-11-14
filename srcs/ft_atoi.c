@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: abahaas <bahaas@student.42.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:18:15 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/07 01:18:17 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/14 16:13:35 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int		ft_atoi(const char *nptr)
 	int sign;
 	int res;
 	int i;
+	int j;
 
 	i = 0;
 	res = 0;

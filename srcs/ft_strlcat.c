@@ -6,12 +6,11 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 22:52:12 by bahaas            #+#    #+#             */
-/*   Updated: 2020/10/30 16:42:40 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/14 15:37:36 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-#include <bsd/string.h>
 
 size_t ft_strlcat(char *dst, const char *src, size_t size)
 {
@@ -37,7 +36,7 @@ int main()
 {
 	char tab[] = "bonjour";
 	char tab2[] = "tout le monde";
-	printf("%lu\n", strlcat(tab, tab2, 25));
-	printf("%lu\n", ft_strlcat(tab, tab2, 25));
+	printf("%lu\n", strlcat(tab, tab2, 8));
+	printf("%lu\n", ft_strlcat(tab, tab2, 8));
 	return 0;
 }
