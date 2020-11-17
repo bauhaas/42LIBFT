@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/07 00:20:17 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/07 00:20:20 by bahaas           ###   ########.fr       */
+/*   Created: 2020/11/17 11:14:47 by bahaas            #+#    #+#             */
+/*   Updated: 2020/11/17 11:15:12 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <string.h>
 #include <ctype.h>
 
-typedef struct		s_list
+typedef	struct		s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -63,7 +63,7 @@ void	ft_putnbr_fd(int n, int fd);
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);
-int	ft_lstsize(t_list *lst);
+int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));

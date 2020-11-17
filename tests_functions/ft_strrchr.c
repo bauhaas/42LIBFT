@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char *ft_strdup(char const *s);
+char *ft_strrchr(const char *s, int c);
 
 int main(void)
 {
@@ -9,23 +9,23 @@ int main(void)
 	char *test2 = "Next";
 	char *test3 = "Finish the";
 	char *test4 = "FU-";
-	char *test5 = "Everything ";
+	char *test5 = "Everytehing ";
 	char *test6 = "Quarante";
 	char *test7 = "1 + 1";
 	char *test8 = "Not a good";
 	char *test9 = "123";
-	char *test10 = "	i	b";
+	char *test10 = "123";
 
-	char *result1 = ft_strdup(test1);
-	char *result2 = ft_strdup(test2);
-	char *result3 = ft_strdup(test3);
-	char *result4 = ft_strdup(test4);
-	char *result5 = ft_strdup(test5);
-	char *result6 = ft_strdup(test6);
-	char *result7 = ft_strdup(test7);
-	char *result8 = ft_strdup(test8);
-	char *result9 = ft_strdup(test9);
-	char *result10 = ft_strdup(test10);
+	char *result1 = ft_strrchr(test1, 'l');
+	char *result2 = ft_strrchr(test2, 'x');
+	char *result3 = ft_strrchr(test3, 'i');
+	char *result4 = ft_strrchr(test4, 'F');
+	char *result5 = ft_strrchr(test5, 'e');
+	char *result6 = ft_strrchr(test6, 'a');
+	char *result7 = ft_strrchr(test7, ' ');
+	char *result8 = ft_strrchr(test8, 'o');
+	char *result9 = ft_strrchr(test9, '2');
+	char *result10 = ft_strrchr(test10, '1');
 	//TEST1
 	printf("%s\n", result1);
 	//TEST2
@@ -46,16 +46,5 @@ int main(void)
 	printf("%s\n", result9);
 	//TEST10
 	printf("%s\n", result10);
-	
-	free(result1);
-	free(result2);
-	free(result3);
-	free(result4);
-	free(result5);
-	free(result6);
-	free(result7);
-	free(result8);
-	free(result9);
-	free(result10);
 	return (0);
 }

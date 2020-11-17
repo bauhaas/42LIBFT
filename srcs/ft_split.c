@@ -6,13 +6,13 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:10:48 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/07 01:10:50 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/17 11:34:45 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-int		count_words(char *str, char c)
+static int		count_words(char *str, char c)
 {
 	int i;
 	int w_len;
@@ -36,7 +36,7 @@ int		count_words(char *str, char c)
 	return (count_w);
 }
 
-char	*ft_strncat(char *str, char *new_str, int n)
+static char		*ft_strncat(char *str, char *new_str, int n)
 {
 	int i;
 
@@ -50,7 +50,7 @@ char	*ft_strncat(char *str, char *new_str, int n)
 	return (new_str);
 }
 
-char	**ft_create(char **split, char c, int count_w, char *str)
+static char		**ft_create(char **split, char c, int count_w, char *str)
 {
 	int i;
 	int j;
@@ -75,7 +75,7 @@ char	**ft_create(char **split, char c, int count_w, char *str)
 	return (split);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	int		count_w;
 	char	**split;

@@ -1,13 +1,10 @@
-content = Test 1, adress = 0x7fe4a2400620
-content = Bonjour, adress = 0x7fe4a2400630
-content = veux, adress = 0x7fe4a2400690
-content = tu, adress = 0x7fe4a24006a0
-content = bien, adress = 0x0
-
-After adding element to the back
-content = Test 1, adress = 0x7fe4a2400620
-content = Bonjour, adress = 0x7fe4a2400630
-content = veux, adress = 0x7fe4a2400690
-content = tu, adress = 0x7fe4a24006a0
-content = bien, adress = 0x7fe4a2402660
-content = Back, adress = 0x0
+o World !
+his_a_snake_string_?
+isACamelString ?
+lleraseallspace
+ IS OK !
+te the following number : 0123456789
+56Quarante-deux123456
+3LP M3E ! #42
+4C3R?007
+ day is it?

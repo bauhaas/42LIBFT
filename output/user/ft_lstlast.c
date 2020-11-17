@@ -1,8 +1,8 @@
-content = Test 1, adress = 0x7fd05ec02670
-content = Bonjour, adress = 0x7fd05ec00620
-content = veux, adress = 0x7fd05ec00630
-content = tu, adress = 0x7fd05ec00690
-content = bien, adress = 0x0
+content = Test 1, adress = 0x55eefa476280
+content = Bonjour, adress = 0x55eefa4762a0
+content = veux, adress = 0x55eefa4762c0
+content = tu, adress = 0x55eefa4762e0
+content = bien, adress = (nil)
 
 Last element of the list is :
 bien

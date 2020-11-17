@@ -1,13 +1,10 @@
-content = Test 1, adress = 0x7fb712400620
-content = Bonjour, adress = 0x7fb712400630
-content = veux, adress = 0x7fb712400690
-content = tu, adress = 0x7fb7124006a0
-content = bien, adress = 0x0
-
-After adding element to the back
-content = Test 1, adress = 0x7fb712400620
-content = Bonjour, adress = 0x7fb712400630
-content = veux, adress = 0x7fb712400690
-content = tu, adress = 0x7fb7124006a0
-content = bien, adress = 0x7fb712402660
-content = Back, adress = 0x0
+5 Bruuh
+9 is t
+9 IString
+6 bahaas
+6 Not 
+24 I wont do i
+8 1te-d
+17 
+4 007J
+2 What day is it?

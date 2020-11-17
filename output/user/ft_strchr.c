@@ -1,13 +1,10 @@
-content = Test 1, adress = 0x7fa3b4c00620
-content = Bonjour, adress = 0x7fa3b4c00630
-content = veux, adress = 0x7fa3b4c00690
-content = tu, adress = 0x7fa3b4c006a0
-content = bien, adress = 0x0
+ello
+xt
+nish the
 
-After adding element to the back
-content = Test 1, adress = 0x7fa3b4c00620
-content = Bonjour, adress = 0x7fa3b4c00630
-content = veux, adress = 0x7fa3b4c00690
-content = tu, adress = 0x7fa3b4c006a0
-content = bien, adress = 0x7fa3b4c02660
-content = Back, adress = 0x0
+ything 
+
+ + 1
+a good
+23
+123

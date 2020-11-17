@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/16 23:00:07 by bahaas            #+#    #+#             */
-/*   Updated: 2020/10/13 21:57:47 by bahaas           ###   ########.fr       */
+/*   Created: 2020/11/17 17:30:07 by bahaas            #+#    #+#             */
+/*   Updated: 2020/11/17 17:37:12 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	const char	*tmp_src;
-	char		*tmp_dest;
-	size_t		i;
+	const char		*tmp_src;
+	char			*tmp_dest;
+	size_t			i;
 
 	tmp_src = (char *)src;
 	tmp_dest = (char *)dest;

@@ -41,14 +41,14 @@ printf " =======================================================================
 printf ${WHITE}"\n"
 #norminette_path()
 #{
-#read -p "Do you run the test from Guacamole/42 Campus [Y/N]?" AT_42
-#if [[ "${AT42}" == "Y" ]];then
-#	NORMINETTE_PATH=/usr/share/norminette/norminette.rb
-#elif [[ "${AT42}" == "N" ]]; then
-#	NORMINETTE_PATH=~/.norminette/norminette.rb
+read -p "Do you run the test from Guacamole/42 Campus [Y/N]?" AT_42
+if [[ "${AT42}" == "Y" ]];then
+	NORMINETTE_PATH=/usr/share/norminette/norminette.rb
+else
+	NORMINETTE_PATH=~/.norminette/norminette.rb
 #else
 #	norminette_path
-#fi
+fi
 #}
 
 #Check for code owner / Makefile presence / and libft.h presence
@@ -184,7 +184,7 @@ function_breaker()
 		else
 			printf ${RED}"\033[24G[KO]"
 		fi
-		if [[ -z $(norminette ./srcs/${val} | grep "Error\|Warning") ]]; then
+		if [[ -z $(${NORMINETTE_PATH} ./srcs/${val} | grep "Error\|Warning") ]]; then
 			printf ${GREEN}"\033[40G[OK]"
 		else
 			printf ${RED}"\033[40G[KO]"

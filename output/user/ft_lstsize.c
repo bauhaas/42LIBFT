@@ -1,8 +1,8 @@
-content = Test 1, adress = 0x7fbfeac02670
-content = Bonjour, adress = 0x7fbfeac00620
-content = veux, adress = 0x7fbfeac00630
-content = tu, adress = 0x7fbfeac00690
-content = bien, adress = 0x0
+content = Test 1, adress = 0x55e981846280
+content = Bonjour, adress = 0x55e9818462a0
+content = veux, adress = 0x55e9818462c0
+content = tu, adress = 0x55e9818462e0
+content = bien, adress = (nil)
 
 Number of elements :
 5

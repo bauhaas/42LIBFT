@@ -1,13 +1,10 @@
-content = Test 1, adress = 0x7fbfcc400620
-content = Bonjour, adress = 0x7fbfcc400630
-content = veux, adress = 0x7fbfcc400690
-content = tu, adress = 0x7fbfcc4006a0
-content = bien, adress = 0x0
-
-After adding element to the back
-content = Test 1, adress = 0x7fbfcc400620
-content = Bonjour, adress = 0x7fbfcc400630
-content = veux, adress = 0x7fbfcc400690
-content = tu, adress = 0x7fbfcc4006a0
-content = bien, adress = 0x7fbfcc402660
-content = Back, adress = 0x0
+Hedlo World !
+isvthis_a_snake_string_?
+Is/hisACamelString ?
+Itsilleraseallspace
+TqST IS OK !
+de8ete the following number : 0123456789
+124456Quarante-deux123456
+222H3LP M3E ! #42
+00-H4C3R?007
+What day is it?
