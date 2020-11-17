@@ -1,5 +1,0 @@
-#!/bin/bash
-RM_TEST_DIR=1
-TEST_P1=1
-TEST_P2=1
-TEST_BONUS=1
