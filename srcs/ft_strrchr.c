@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 18:21:49 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/17 11:23:15 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 16:57:34 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	if (s[i] == c)
 		return ((char *)&s[i]);
 	i--;
-	while (s[i])
+	while (i != 0)
 	{
 		if (s[i] == c)
 			return ((char *)&s[i]);
