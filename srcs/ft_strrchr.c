@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/01 18:21:49 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/18 16:57:34 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 17:26:08 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int i;
+	int		i;
+	char	*str;
 
-	i = ft_strlen(s);
-	if (s[i] == c)
-		return ((char *)&s[i]);
-	i--;
-	while (i != 0)
+	str = (char *)s;
+	i = ft_strlen(str) + 1;
+	while (i--)
 	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i--;
+		if (str[i] == c)
+			return ((char *)&str[i]);
 	}
 	return (NULL);
 }
