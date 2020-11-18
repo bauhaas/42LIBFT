@@ -6,13 +6,13 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 22:52:08 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/06 16:38:09 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 18:19:54 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int		count_digit(long i)
+static int		count_digit(long i)
 {
 	int count;
 
@@ -27,7 +27,7 @@ int		count_digit(long i)
 	return (count);
 }
 
-char	*reverse(char *str)
+static char		*reverse(char *str)
 {
 	int i;
 	int j;
@@ -50,7 +50,7 @@ char	*reverse(char *str)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char		*ft_itoa(int n)
 {
 	long int	nb;
 	int			i;

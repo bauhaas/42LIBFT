@@ -6,13 +6,13 @@
 /*   By: bahaas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 11:33:16 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/18 15:57:25 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 18:21:28 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
-int		is_in_charset(char c, char const *set)
+static int		is_in_charset(char c, char const *set)
 {
 	int i;
 
@@ -26,7 +26,7 @@ int		is_in_charset(char c, char const *set)
 	return (0);
 }
 
-int		start_position(char const *s1, char const *set)
+static int		start_position(char const *s1, char const *set)
 {
 	int pos;
 
@@ -36,7 +36,7 @@ int		start_position(char const *s1, char const *set)
 	return (pos);
 }
 
-int		end_position(char const *s1, char const *set)
+static int		end_position(char const *s1, char const *set)
 {
 	int pos;
 
@@ -46,7 +46,7 @@ int		end_position(char const *s1, char const *set)
 	return (pos);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char	*str;
 	int		trim_len;
