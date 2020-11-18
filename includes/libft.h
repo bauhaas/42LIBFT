@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 11:14:47 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/17 11:15:12 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 10:41:43 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <unistd.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <stddef.h>
 #include <string.h>
 #include <ctype.h>
