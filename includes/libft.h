@@ -6,13 +6,14 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 10:46:26 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/18 11:08:52 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 11:18:07 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
 # include <string.h>
