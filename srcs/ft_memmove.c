@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 22:52:11 by bahaas            #+#    #+#             */
-/*   Updated: 2020/10/13 21:24:50 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 15:10:35 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,19 @@
 
 void		*ft_memmove(void *dest, const void *src, size_t n)
 {
-	size_t		i;
-	const char	*tmp_src;
-	char		*tmp_dest;
+	size_t			i;
+	unsigned char	*tmp_src;
+	unsigned char	*tmp_dest;
 
-	i = 0;
-	tmp_src = (char *)src;
-	tmp_dest = (char *)dest;
+	i = -1;
+	if (!dest && !src)
+		return (NULL);
+	tmp_src = (unsigned char *)src;
+	tmp_dest = (unsigned char *)dest;
 	if (tmp_src > tmp_dest)
 	{
-		while (i < n)
-		{
+		while (++i < n)
 			tmp_dest[i] = tmp_src[i];
-			i++;
-		}
 	}
 	else
 	{
@@ -37,5 +36,5 @@ void		*ft_memmove(void *dest, const void *src, size_t n)
 			n--;
 		}
 	}
-	return (dest);
+	return (tmp_dest);
 }
