@@ -6,7 +6,7 @@
 /*   By: bahaas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 11:33:16 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/18 14:37:46 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 15:57:25 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
+	str = NULL;
 	start = start_position(s1, set);
 	end = end_position(s1, set);
 	trim_len = end - start + 1;
 	if (trim_len < 0)
-		return ("\0");
+		return (ft_calloc(1, 1));
 	str = malloc(sizeof(char) * trim_len + 1);
 	if (!str)
 		return (NULL);

@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 10:46:26 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/18 11:18:07 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/18 15:55:29 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef	struct	s_list
 
 void			*ft_memset(void *s, int c, size_t n);
 void			ft_bzero(void *s, size_t n);
+void			*ft_calloc(size_t nmemb, size_t size);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
 void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
@@ -48,6 +49,8 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*strnstr(const char *s1, const char *s2, size_t n);
 int				ft_atoi(const char *nptr);
 size_t			ft_strlen(const char *s);
+char			*ft_strdup(const char *s);
+char			*ft_strnstr(const char *big, const char *little, size_t len);
 
 char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
