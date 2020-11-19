@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/16 22:52:12 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/17 11:31:03 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/19 16:20:27 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char			*ft_strjoin(char const *s1, char const *s2)
 	int		tot_len;
 	char	*emptystr;
 
+	if (!s1 || !s2)
+		return (NULL);
 	tot_len = ft_tot_len(s1, s2);
 	if (tot_len == 0)
 	{
