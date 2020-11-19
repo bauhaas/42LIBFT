@@ -6,7 +6,7 @@
 /*   By: bahaas <bahaas@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/07 01:10:48 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/17 11:34:45 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/19 15:23:58 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,9 @@ char			**ft_split(char const *s, char c)
 {
 	int		count_w;
 	char	**split;
-
+	
+	if (!s)
+		return (NULL);
 	count_w = count_words((char *)s, c);
 	split = malloc(sizeof(char *) * (count_w + 1));
 	if (!split)
