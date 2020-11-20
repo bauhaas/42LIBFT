@@ -6,7 +6,7 @@
 /*   By: bahaas <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/15 11:33:16 by bahaas            #+#    #+#             */
-/*   Updated: 2020/11/19 16:22:16 by bahaas           ###   ########.fr       */
+/*   Updated: 2020/11/20 15:50:51 by bahaas           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	int		start;
 	int		end;
 	int		i;
-	
+
 	if (!s1 || !set)
 		return (NULL);
 	str = NULL;
