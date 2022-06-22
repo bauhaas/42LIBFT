@@ -1,5 +1,5 @@
 # .github/workflows/norm-v2.yml
-name: norminette
+name: norm-v2
 on: [push, pull_request]
 
 jobs:
